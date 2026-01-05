@@ -1,38 +1,108 @@
-body{
-    text-align : center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.btn{
-    height:200px;
-    width : 200px;
-    border-radius : 20%;
-    border : 10px solid black;
-    margin : 2.5rem;
-
-}
-.btn-container{
-    display : flex;
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-     
-}
-.yellow{
-    background-color: #FACC15;   
-}
-
-.red{
-    background-color: #EF4444;  
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    font-family: "Poppins", system-ui, sans-serif;
+    color: white;
+    text-align: center;
 }
 
-.purple{
-    background-color: #8B5CF6;  
+/* Headings */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
 }
 
-.green{
-    background-color: #22C55E;   
+h2 {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-bottom: 2rem;
 }
-.flash{
-    background-color: white;
+
+/* Game Container */
+.btn-container {
+    display: grid;
+    grid-template-columns: repeat(2, 220px);
+    gap: 1.8rem;
+    padding: 2rem;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
 }
-.userFlash{
-    background-color: pink;
+
+/* Buttons */
+.btn {
+    margin :30px 0 ;
+    height: 220px;
+    width: 220px;
+    border-radius: 22%;
+    border: none;
+    cursor: pointer;
+    box-shadow: inset 0 0 20px rgba(255,255,255,0.15),
+                0 15px 30px rgba(0,0,0,0.5);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s;
+}
+
+/* Button hover */
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* Colors (aesthetic & rich) */
+.yellow {
+    background: linear-gradient(135deg, #fde047, #facc15);
+}
+
+.red {
+    background: linear-gradient(135deg, #f87171, #ef4444);
+}
+
+.purple {
+    background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+}
+
+.green {
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+}
+
+/* Game flash (computer turn) */
+.flash {
+    opacity: 0.4;
+    transform: scale(1.08);
+    box-shadow: 0 0 40px white;
+}
+
+/* User click flash */
+.userFlash {
+    opacity: 0.6;
+    transform: scale(0.95);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+    .btn-container {
+        grid-template-columns: repeat(2, 160px);
+        gap: 1.2rem;
+    }
+
+    .btn {
+        height: 160px;
+        width: 160px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
 }
